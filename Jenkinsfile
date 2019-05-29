@@ -18,8 +18,13 @@ pipeline{
 			}
 		}
 		stage ('Deployment Stage'){
+			when {
+			      expression {
+				currentBuild.result == null || currentBuild.result == 'SUCCESS' 
+			      }
+			}
 			steps{
-					sh 'make publish'
+				sh 'make publish'
 			}
 		}
 	}
