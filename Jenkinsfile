@@ -18,13 +18,12 @@ pipeline{
 			}
 		}
 		stage ('Deployment Stage'){
-			when {
-			      expression {
-				currentBuild.result == null || currentBuild.result == 'SUCCESS' 
-			      }
-			}
+
 			steps{
-				sh 'git push origin master'
+			    sh 'git config --global user.email "Sarthak2116@github.com"'
+			    sh 'git config --global user.name "Sarthak2116"'
+			    sh 'git config --global push.default simple'
+			    sh('git push https://github.com/Sarthak2116/jenkins-practice.git')
 			}
 		}
 	}
