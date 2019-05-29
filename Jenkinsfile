@@ -24,7 +24,7 @@ pipeline{
 			      }
 			}
 			steps{
-				sh 'mvn deploy'
+				sh 'git push origin master'
 			}
 		}
 	}
