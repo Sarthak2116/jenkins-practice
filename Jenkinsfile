@@ -4,17 +4,17 @@ pipeline{
 		stage ('Compile Stage')
 		{
 			steps{
-					bat 'call mvn clean compile'
+					sh 'call mvn clean compile'
 			}
 		}
 		stage ('Test Stage'){
 			steps{
-					bat 'call mvn test'
+					sh 'call mvn test'
 			}
 		}
 		stage ('Package Stage'){
 			steps{
-					bat 'call mvn package'
+					sh 'call mvn package'
 			}
 		}
 		stage ('Deployment Stage'){
